@@ -2,7 +2,7 @@
 ## Title: |c00EAFF00 Pixelbased - Media Pack |r 
 ## IconTexture: Interface\AddOns\SharedMedia_Pixelbased\assets\pixelIcon.blp
 ## Notes: A media pack for Pixelbased addons.
-## Version: 1.0.2
+## Version: 1.0.3
 ## X-Curse-Project-ID: 1317519
 ## Category-enUS: Media
 
