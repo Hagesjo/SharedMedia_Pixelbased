@@ -1,3 +1,8 @@
+# Version 1.0.4
+
+- Icon files added
+- Guild logo added
+  
 # Version 1.0.3
 
 - Icon files added
