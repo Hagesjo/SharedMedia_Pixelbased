@@ -1,3 +1,8 @@
+# Version 1.0.5
+
+- More icons files added
+- Soundpaths updated
+
 # Version 1.0.4
 
 - Icon files added
