@@ -1,3 +1,8 @@
+# Version 1.0.6
+
+- Fix soundpaths
+- Bump interface version
+
 # Version 1.0.5
 
 - More icons files added
