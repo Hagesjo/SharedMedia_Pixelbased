@@ -34,9 +34,10 @@ LSM:Register("sound", "|cff00eaffUwU|r", [[Interface\Addons\SharedMedia_Pixelbas
 
 
 ----------- Guild Raider Sounds --------
-LSM:Register("sound", "|cff00eaffBob|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\bob_lunker.mp3]])
-LSM:Register("sound", "|cff00eaffEspen|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\espen_bark.mp3]])
-LSM:Register("sound", "|cff00eaffIgor|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\igor_scream.mp3]])
-LSM:Register("sound", "|cff00eaffKyth|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\kyth_huh.mp3]])
-LSM:Register("sound", "|cff00eaffMike|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\mike_uhoh.mp3]])
-LSM:Register("sound", "|cff00eaffPeba|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\peba_gooning.mp3]])
+LSM:Register("sound", "|cff00eaffBob Lunker|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\bob_lunker.mp3]])
+LSM:Register("sound", "|cff00eaffEspen Borf|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\espen_bark.mp3]])
+LSM:Register("sound", "|cff00eaffIgor AAA|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\igor_scream.mp3]])
+LSM:Register("sound", "|cff00eaffKyth HUAGH|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\kyth_huh.mp3]])
+LSM:Register("sound", "|cff00eaffMike Uh Oh|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\mike_uhoh.mp3]])
+LSM:Register("sound", "|cff00eaffPeba Gooning|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\peba_gooning.mp3]])
+
