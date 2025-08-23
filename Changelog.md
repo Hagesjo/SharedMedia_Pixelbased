@@ -1,3 +1,9 @@
+#Version 1.0.8
+
+- Added more guild pictures
+- Added Nexus King Map
+- Mastered audio clips volume
+
 # Version 1.0.7
 
 - Added more guild pictures
