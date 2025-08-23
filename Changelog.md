@@ -1,4 +1,4 @@
-#Version 1.0.8
+# Version 1.0.8
 
 - Added more guild pictures
 - Added Nexus King Map
