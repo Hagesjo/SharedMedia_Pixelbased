@@ -2,7 +2,7 @@
 ## Title: |c00EAFF00 Pixelbased - Media Pack |r 
 ## IconTexture: Interface\AddOns\SharedMedia_Pixelbased\assets\pixelIcon.blp
 ## Notes: A media pack for Pixelbased addons.
-## Version: 1.0.7
+## Version: 1.0.8
 ## X-Curse-Project-ID: 1317519
 ## Category-enUS: Media
 
@@ -10,5 +10,6 @@ libs\LibStub\LibStub.lua
 libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
 embeds.xml
 Soundpaths.lua 
+
 
 
