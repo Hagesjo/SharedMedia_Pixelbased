@@ -1,7 +1,6 @@
-# Version 1.0.9 (WIP)
+# Version 1.0.9
 
 - Added more guild pictures
--
 
 # Version 1.0.8
 
