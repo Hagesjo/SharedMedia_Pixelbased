@@ -1,3 +1,9 @@
+# Version 1.1.2
+
+- Added meme sounds
+- Added guild voice clips
+- Added guild pictures for break timer
+  
 # Version 1.1.1
 
 - Added MORE guild pictures
