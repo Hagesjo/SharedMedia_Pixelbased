@@ -3,7 +3,7 @@ local LSM = LibStub("LibSharedMedia-3.0")
 --------- Random Sounds --------
 LSM:Register("sound", "|cff00eaffDark Souls Death|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\default\Z1_DarkSouls_Death.mp3]])
 LSM:Register("sound", "|cff00eaffSkill Issue|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\default\Z2_Skillissue.ogg]])
-LSM:Register("sound", "|cff00eaffJurrasic Park|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\default\Z3_JurassicPark.ogg]])
+LSM:Register("sound", "|cff00eaffJurassic Park|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z3_JurassicPark.ogg]])
 LSM:Register("sound", "|cff00eaffMega Pint|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\default\Z4_MegaPint.mp3]])
 LSM:Register("sound", "|cff00eaffDaddy Chill|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\default\Z5_DaddyChill.mp3]])
 LSM:Register("sound", "|cff00eaffTaDa|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\default\Z6_TaDa.mp3]])
@@ -17,7 +17,6 @@ LSM:Register("sound", "|cff00eaffPhasmoVan|r", [[Interface\AddOns\SharedMedia_Pi
 LSM:Register("sound", "|cff00eaffUwU|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\default\Z14_UwU.mp3]])
 LSM:Register("sound", "|cff00eaffDark Souls Death|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z1_DarkSouls_Death.mp3]])
 LSM:Register("sound", "|cff00eaffSkill Issue|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z2_SKillIssue.ogg]])
-LSM:Register("sound", "|cff00eaffJurassic Park|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z3_JurassicPark.ogg]])
 LSM:Register("sound", "|cff00eaffMega Pint|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z4_MegaPint.mp3]])
 LSM:Register("sound", "|cff00eaffDaddy Chill|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z5_DaddyChill.mp3]])
 LSM:Register("sound", "|cff00eaffTaa Daa|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z6_TaDa.mp3]])
@@ -62,5 +61,6 @@ LSM:Register("sound", "|cff00eaffPeba Gooning|r", [[Interface\AddOns\SharedMedia
 LSM:Register("sound", "|cff00eaffMike Balling|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\mike_balling.mp3]])
 LSM:Register("sound", "|cff00eaffRalegh Aughh|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\ralegh_augh.mp3]])
 LSM:Register("sound", "|cff00eaffBob Dying|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\bob_dying.mp3]])
+
 
 
