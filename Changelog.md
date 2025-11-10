@@ -1,3 +1,7 @@
+# Version 1.1.3
+
+- Fixed guild voice clips (?)
+
 # Version 1.1.2
 
 - Added meme sounds
