@@ -1,3 +1,7 @@
+# Version 1.1.4
+
+- Fixed guild picture format
+
 # Version 1.1.3
 
 - Fixed guild voice clips (?)
