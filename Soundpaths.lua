@@ -61,6 +61,7 @@ LSM:Register("sound", "|cff00eaffPeba Gooning|r", [[Interface\AddOns\SharedMedia
 LSM:Register("sound", "|cff00eaffMike Balling|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\mike_balling.mp3]])
 LSM:Register("sound", "|cff00eaffRalegh Aughh|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\ralegh_augh.mp3]])
 LSM:Register("sound", "|cff00eaffBob Dying|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\bob_dying.mp3]])
-
+LSM:Register("sound", "|cff00eaffEspen Sorry|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\espen_sorry.mp3]])
+LSM:Register("sound", "|cff00eaffJed Ass|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\jed_ass.mp3]])
 
 
