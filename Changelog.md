@@ -1,10 +1,14 @@
+# Version 1.1.5
+
+- Audio mastering
+
 # Version 1.1.4
 
 - Fixed guild picture format
 
 # Version 1.1.3
 
-- Fixed guild voice clips (?)
+- Fixed guild voice clips
 
 # Version 1.1.2
 
