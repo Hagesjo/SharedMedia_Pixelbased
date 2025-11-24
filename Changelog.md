@@ -1,3 +1,8 @@
+# Version 1.1.6
+
+- Added back default audios
+- More audio mastering
+
 # Version 1.1.5
 
 - Audio mastering
