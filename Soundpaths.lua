@@ -25,8 +25,6 @@ LSM:Register("sound", "|cff00eaffPedro|r", [[Interface\Addons\SharedMedia_Pixelb
 LSM:Register("sound", "|cff00eaffSurf Bird|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z9_SurfBird.mp3]])
 LSM:Register("sound", "|cff00eaffAnother One|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z10_AnotherOne.mp3]])
 LSM:Register("sound", "|cff00eaffCoffin Dance|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z11_CoffinDance.mp3]])
-LSM:Register("sound", "|cff00eaffWhy are you running?|r",
-    [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z12_WhyAreYouRunning.mp3]])
 LSM:Register("sound", "|cff00eaffPhasomo Van|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z13_PhasmoVan.mp3]])
 LSM:Register("sound", "|cff00eaffUwU|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\Z14_UwU.mp3]])
 LSM:Register("sound", "|cff00eaffSigma|r", [[Interface\Addons\SharedMedia_Pixelbased\sound\default\what_the_sigma.mp3]])
@@ -63,5 +61,6 @@ LSM:Register("sound", "|cff00eaffRalegh Aughh|r", [[Interface\AddOns\SharedMedia
 LSM:Register("sound", "|cff00eaffBob Dying|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\bob_dying.mp3]])
 LSM:Register("sound", "|cff00eaffEspen Sorry|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\espen_sorry.mp3]])
 LSM:Register("sound", "|cff00eaffJed Ass|r", [[Interface\AddOns\SharedMedia_Pixelbased\sound\jed_ass.mp3]])
+
 
 
