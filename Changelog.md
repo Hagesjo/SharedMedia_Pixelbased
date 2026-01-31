@@ -1,3 +1,8 @@
+# Version 1.2.0
+
+- Make it work for midnight
+- Add break timer memes
+
 # Version 1.1.6
 
 - Added back default audios
