@@ -136,13 +136,23 @@ end)
 -- ================== Logic ==================
 local endTime, running = 0, false
 
-local function pickRandomMeme()
+local function pickRandomMeme(chosen)
+  local DEFAULT_TEXTURE = "Interface\\FriendsFrame\\Battlenet-Portrait"
   if type(PixelMemes_List) ~= "table" or #PixelMemes_List == 0 then
-    tex:SetTexture("Interface\\FriendsFrame\\Battlenet-Portrait")
-    return
+    tex:SetTexture(DEFAULT_TEXTURE)
+    print("PixelMemes: pickRandomMeme - list empty, using default:", DEFAULT_TEXTURE)
+    return DEFAULT_TEXTURE
+  end
+  if chosen and type(chosen) == "string" then
+    tex:SetTexture(chosen)
+    print("PixelMemes: pickRandomMeme - forced texture:", chosen)
+    return chosen
   end
   local idx = math.random(1, #PixelMemes_List)
-  tex:SetTexture(PixelMemes_List[idx])
+  local path = PixelMemes_List[idx]
+  tex:SetTexture(path)
+  print("PixelMemes: pickRandomMeme - chosen index", idx, "path", path, "list_size=", #PixelMemes_List)
+  return path
 end
 
 local function formatTime(sec)
@@ -152,14 +162,32 @@ local function formatTime(sec)
   return string.format("%02d:%02d", m, s)
 end
 
-local function StartBreak(minutes, startedBy)
+local function StartBreak(minutes, startedBy, specifiedTexture)
   minutes = tonumber(minutes)
   if not minutes or minutes <= 0 then return end
-  pickRandomMeme()
+  local chosenTexture = pickRandomMeme(specifiedTexture)
   ApplySavedLayout()
   f:Show()
   endTime = GetTime() + (minutes * 60)
   running = true
+
+  -- debug about what we're about to send (if anything)
+  print("PixelMemes: StartBreak - mins=", minutes, "startedBy=", startedBy, "chosenTexture=", tostring(chosenTexture))
+
+  -- If we're group leader, broadcast minutes + chosen texture to the group
+  local chan = GetGroupChannel()
+  if chan and UnitIsGroupLeader("player") and C_ChatInfo and C_ChatInfo.IsAddonMessagePrefixRegistered and C_ChatInfo.IsAddonMessagePrefixRegistered(PREFIX) then
+    local DEFAULT_TEXTURE = "Interface\\FriendsFrame\\Battlenet-Portrait"
+    -- don't broadcast the default placeholder when the list is empty
+    if chosenTexture == DEFAULT_TEXTURE and (type(PixelMemes_List) ~= "table" or #PixelMemes_List == 0) then
+      print("PixelMemes: Not sending addon message - meme list empty on leader")
+    else
+      -- use a tab separator; receivers will split by tab
+      local msg = tostring(minutes) .. "\t" .. tostring(chosenTexture)
+      C_ChatInfo.SendAddonMessage(PREFIX, msg, chan)
+      print("PixelMemes: Sent", minutes, chosenTexture)
+    end
+  end
 end
 
 f:SetScript("OnUpdate", function(self)
@@ -177,22 +205,17 @@ f:SetScript("OnUpdate", function(self)
 end)
 
 -- ================== Slash command ==================
-SLASH_BREAKMEMES1 = "/bmeme"
-SlashCmdList["BREAKMEMES"] = function(msg)
+SLASH_PIXELMEMES1 = "/pmeme"
+SlashCmdList["PIXELMEMES"] = function(msg)
   local minutes = tonumber(msg)
   if not minutes or minutes <= 0 then
     return
   end
   StartBreak(minutes, PlayerName())
-
-  local chan = GetGroupChannel()
-  if chan and C_ChatInfo and C_ChatInfo.IsAddonMessagePrefixRegistered and C_ChatInfo.IsAddonMessagePrefixRegistered(PREFIX) then
-    C_ChatInfo.SendAddonMessage(PREFIX, tostring(minutes), chan)
-  end
 end
 
-SLASH_BREAKMEMESHIDE1 = "/breakhide"
-SlashCmdList["BREAKMEMESHIDE"] = function()
+SLASH_PIXELMEMESHIDE1 = "/breakhide"
+SlashCmdList["PIXELMEMESHIDE"] = function()
   f:Hide()
   running = false
 end
@@ -304,9 +327,12 @@ ev:SetScript("OnEvent", function(_, event, ...)
     if not prefix or not message then return end
 
     if prefix == PREFIX then
-      local m = tonumber(message)
+      -- message format: "<minutes>\t<texturePath?>" (texturePath may be nil)
+      local mins, tex = strsplit("\t", message)
+      local m = tonumber(mins)
       if m and m > 0 and sender ~= PlayerName() then
-        StartBreak(m, sender)
+        print("PixelMemes: Received from", sender, "mins=", m, "tex=", tex)
+        StartBreak(m, sender, tex)
       end
       return
     end

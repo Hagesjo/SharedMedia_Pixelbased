@@ -1,4 +1,4 @@
-BreakMemes_List = {
+PixelMemes_List = {
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\10_loaded.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\11_marriah.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\12_martin.jpg",
