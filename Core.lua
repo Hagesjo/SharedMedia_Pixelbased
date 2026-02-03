@@ -135,6 +135,17 @@ end)
 
 -- ================== Logic ==================
 local endTime, running = 0, false
+local rotationTicker = nil
+local ROTATION_INTERVAL = 30 -- seconds between image rotations
+
+local function StopRotationTicker()
+  if rotationTicker then
+    if type(rotationTicker.Cancel) == "function" then
+      rotationTicker:Cancel()
+    end
+    rotationTicker = nil
+  end
+end
 
 local function pickRandomMeme(chosen)
   local DEFAULT_TEXTURE = "Interface\\FriendsFrame\\Battlenet-Portrait"
@@ -186,6 +197,16 @@ local function StartBreak(minutes, startedBy, specifiedTexture)
       local msg = tostring(minutes) .. "\t" .. tostring(chosenTexture)
       C_ChatInfo.SendAddonMessage(PREFIX, msg, chan)
       -- print("PixelMemes: Sent", minutes, chosenTexture)
+      -- Start a rotation ticker to send new images periodically
+      StopRotationTicker()
+      if type(PixelMemes_List) == "table" and #PixelMemes_List > 0 and C_Timer and type(C_Timer.NewTicker) == "function" then
+        rotationTicker = C_Timer.NewTicker(ROTATION_INTERVAL, function()
+          local newPath = pickRandomMeme()
+          if newPath and newPath ~= DEFAULT_TEXTURE then
+            C_ChatInfo.SendAddonMessage(PREFIX, "ROT\t" .. tostring(newPath), chan)
+          end
+        end)
+      end
     end
   end
 end
@@ -197,6 +218,7 @@ f:SetScript("OnUpdate", function(self)
       running = false
       timerText:SetText("00:00")
       PlaySound(SOUNDKIT.ALARM_CLOCK_WARNING_3)
+      StopRotationTicker()
       self:Hide()
     else
       timerText:SetText(formatTime(remaining))
@@ -218,6 +240,7 @@ SLASH_PIXELMEMESHIDE1 = "/breakhide"
 SlashCmdList["PIXELMEMESHIDE"] = function()
   f:Hide()
   running = false
+  StopRotationTicker()
 end
 
 -- ================== Hooks (if DBM/BigWigs are installed locally) ==================
@@ -262,7 +285,7 @@ local function SetupBigWigsHook()
   end)
 
   BW:RegisterMessage("BigWigs_StopBreak", function()
-    if running then running = false f:Hide() end
+    if running then running = false StopRotationTicker() f:Hide() end
   end)
 
   BW:RegisterMessage("BigWigs_PluginComm", function(_, msg, seconds, sender)
@@ -327,12 +350,21 @@ ev:SetScript("OnEvent", function(_, event, ...)
     if not prefix or not message then return end
 
     if prefix == PREFIX then
-      -- message format: "<minutes>\t<texturePath?>" (texturePath may be nil)
-      local mins, tex = strsplit("\t", message)
+      -- message formats:
+      -- 1) "<minutes>\t<texturePath?>" (initial break start)
+      -- 2) "ROT\t<texturePath>" (rotation update only)
+      local a, b = strsplit("\t", message)
+      if a == "ROT" then
+        local path = b
+        if path and path ~= "" then
+          tex:SetTexture(path)
+        end
+        return
+      end
+      local mins, texpath = a, b
       local m = tonumber(mins)
       if m and m > 0 and sender ~= PlayerName() then
-        -- print("PixelMemes: Received from", sender, "mins=", m, "tex=", tex)
-        StartBreak(m, sender, tex)
+        StartBreak(m, sender, texpath)
       end
       return
     end
