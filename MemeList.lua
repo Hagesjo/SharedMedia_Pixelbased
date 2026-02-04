@@ -59,6 +59,8 @@ PixelMemes_List = {
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\58_igor.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\59_mike.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\60_ralegh.jpg",
+  "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\61_pixelmeet_2.jpg",
 }
+
 
 
