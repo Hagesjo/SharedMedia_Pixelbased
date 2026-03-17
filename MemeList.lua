@@ -68,7 +68,6 @@ PixelMemes_List = {
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\67_kythmew.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\68_krakow7.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\69_krakow8.jpg",
-  "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\69_krakow10.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\70_krakow10.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\71_krakow11.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\72_krakow12.jpg",
@@ -78,7 +77,6 @@ PixelMemes_List = {
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\76_chewwey.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\77_kythblu.jpg",
   "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\78_raffe.jpg",
+  "Interface\\Addons\\SharedMedia_Pixelbased\\images\\misc\\79_chewwey.jpg",
 }
-
-
 
