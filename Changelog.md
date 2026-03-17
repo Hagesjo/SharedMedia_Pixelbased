@@ -1,3 +1,8 @@
+# Version 1.2.2
+
+-More guild pics
+-HElp
+
 # Version 1.2.0
 
 - Make it work for midnight
