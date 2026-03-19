@@ -1,7 +1,16 @@
+# Version 1.2.3
+
+- Reduced break rotation timer
+- Disabled some guild pics
+
 # Version 1.2.2
 
--More guild pics
--HElp
+- More guild pics
+- HElp
+
+# Version 1.2.1
+
+- Guild pics added
 
 # Version 1.2.0
 
