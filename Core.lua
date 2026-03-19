@@ -136,7 +136,7 @@ end)
 -- ================== Logic ==================
 local endTime, running = 0, false
 local rotationTicker = nil
-local ROTATION_INTERVAL = 30 -- seconds between image rotations
+local ROTATION_INTERVAL = 20 -- seconds between image rotations
 
 local function StopRotationTicker()
   if rotationTicker then
