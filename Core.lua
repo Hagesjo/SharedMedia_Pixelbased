@@ -110,6 +110,7 @@ summonFrame:SetBackdrop({
   insets = { left = 4, right = 4, top = 4, bottom = 4 },
 })
 summonFrame:SetBackdropColor(0, 0, 0, 0.75)
+summonFrame:EnableMouse(true)
 summonFrame:Hide()
 
 local summonText = summonFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalHuge")
@@ -121,12 +122,6 @@ do
   local font, _, flags = summonText:GetFont()
   summonText:SetFont(font, 24, flags)
 end
-
-local summonClose = CreateFrame("Button", nil, summonFrame, "UIPanelCloseButton")
-summonClose:SetPoint("TOPRIGHT", -4, -4)
-summonClose:SetScript("OnClick", function()
-  HideSummonText()
-end)
 
 local summonNames = {}
 local summonHideTimer = nil
@@ -148,6 +143,12 @@ local function HideSummonText()
   summonText:SetText("")
   summonFrame:Hide()
 end
+
+local summonClose = CreateFrame("Button", nil, summonFrame, "UIPanelCloseButton")
+summonClose:SetPoint("TOPRIGHT", -4, -4)
+summonClose:SetScript("OnClick", function()
+  HideSummonText()
+end)
 
 local function ShowSummonText(name)
   name = name or "?"

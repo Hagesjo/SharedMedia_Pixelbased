@@ -1,3 +1,7 @@
+# Version 1.2.5
+
+- Fix close dialog of summon.
+
 # Version 1.2.4
 
 - 123 helper for summon.
