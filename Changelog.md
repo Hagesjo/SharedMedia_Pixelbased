@@ -1,3 +1,7 @@
+# Version 1.2.4
+
+- 123 helper for summon.
+
 # Version 1.2.3
 
 - Reduced break rotation timer

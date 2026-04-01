@@ -96,6 +96,85 @@ do
   timerText:SetFont(font, 30, flags)
 end
 
+-- Summon notification UI
+local summonFrame = CreateFrame("Frame", "PixelMemesSummonFrame", UIParent, "BackdropTemplate")
+summonFrame:SetSize(360, 70)
+summonFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 140)
+summonFrame:SetFrameStrata("DIALOG")
+summonFrame:SetBackdrop({
+  bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+  edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+  tile = true,
+  tileSize = 16,
+  edgeSize = 16,
+  insets = { left = 4, right = 4, top = 4, bottom = 4 },
+})
+summonFrame:SetBackdropColor(0, 0, 0, 0.75)
+summonFrame:Hide()
+
+local summonText = summonFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalHuge")
+summonText:SetAllPoints(summonFrame)
+summonText:SetJustifyH("CENTER")
+summonText:SetJustifyV("MIDDLE")
+summonText:SetText("")
+do
+  local font, _, flags = summonText:GetFont()
+  summonText:SetFont(font, 24, flags)
+end
+
+local summonClose = CreateFrame("Button", nil, summonFrame, "UIPanelCloseButton")
+summonClose:SetPoint("TOPRIGHT", -4, -4)
+summonClose:SetScript("OnClick", function()
+  HideSummonText()
+end)
+
+local summonNames = {}
+local summonHideTimer = nil
+
+local function UpdateSummonText()
+  if #summonNames == 0 then
+    summonText:SetText("")
+    return
+  end
+  summonText:SetText("Summon " .. table.concat(summonNames, ", "))
+end
+
+local function HideSummonText()
+  if summonHideTimer and type(summonHideTimer.Cancel) == "function" then
+    summonHideTimer:Cancel()
+  end
+  summonHideTimer = nil
+  wipe(summonNames)
+  summonText:SetText("")
+  summonFrame:Hide()
+end
+
+local function ShowSummonText(name)
+  name = name or "?"
+  name = name:gsub("-.*", "")
+  for _, existing in ipairs(summonNames) do
+    if existing == name then
+      UpdateSummonText()
+      if C_Timer and type(C_Timer.After) == "function" then
+        if summonHideTimer and type(summonHideTimer.Cancel) == "function" then
+          summonHideTimer:Cancel()
+        end
+        summonHideTimer = C_Timer.After(10, HideSummonText)
+      end
+      return
+    end
+  end
+  table.insert(summonNames, name)
+  UpdateSummonText()
+  summonFrame:Show()
+  if C_Timer and type(C_Timer.After) == "function" then
+    if summonHideTimer and type(summonHideTimer.Cancel) == "function" then
+      summonHideTimer:Cancel()
+    end
+    summonHideTimer = C_Timer.After(10, HideSummonText)
+  end
+end
+
 -- Close button
 local close = CreateFrame("Button", nil, f, "UIPanelCloseButton")
 close:SetPoint("TOPRIGHT", 0, 0)
@@ -397,6 +476,11 @@ ev:SetScript("OnEvent", function(_, event, ...)
 
   local msg, author = ...
   if not msg then return end
+  if event == "CHAT_MSG_RAID" and msg == "123" then
+    author = author and author:gsub("-.*", "") or "?"
+    ShowSummonText(author)
+    return
+  end
   local lower = msg:lower()
   if not lower:find("%f[%a]break%f[%A]") then return end
 
