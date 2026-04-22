@@ -1,3 +1,7 @@
+# Version 1.2.6
+
+- Added guild pics
+
 # Version 1.2.5
 
 - Fix close dialog of summon.
