@@ -1,4 +1,4 @@
-## Interface: 120001, 120000
+## Interface: 120001, 120000, 120005
 ## Title: |c00EAFF00 Pixelbased - Media Pack |r 
 ## IconTexture: Interface\AddOns\SharedMedia_Pixelbased\assets\pixelIcon.blp
 ## Notes: A media pack for Pixelbased addons. Also includes break timer memes.
