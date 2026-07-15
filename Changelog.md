@@ -1,3 +1,7 @@
+# Version 1.2.7
+
+-Added new guild pics
+
 # Version 1.2.6
 
 - Added guild pics
