@@ -2,7 +2,7 @@
 
 - Added new guild pics
 - Adjusted displayed pictures
--
+- Summon requester removed
 
 # Version 1.2.8
 
